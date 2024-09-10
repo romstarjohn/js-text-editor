@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Page Editor</title>
+</head>
+<body>
+<template class="brief_editor_template">
+
+  <div class="row">
+    <div class="col-lg-12">
+      <h1 id="" style="margin-bottom: 10px;text-align: center; font-size: 45px;">
+        Text Editor
+      </h1>
+    </div>
+  </div>
+
+  <div class="col-lg-6" style="margin-right: 90px;">
+    <div id="vorlagen" class="mb-5">
+      <div class="briefcontainer">
+      </div>
+    </div>
+  </div>
+</template>
+
+<lettereditor-component
+  doc_id="<?php echo $doc_id ?>"
+  client_id="<?php echo $client_id ?>"
+  letter_id="<?php echo $letter_id ?>"
+  input_abw_address="<?php echo $input_abw_address ?>"
+  vz="<?php echo $b_vz ?>"
+  person_position="<?php echo $person_position ?>"
+  letter_type="<?php echo (($letter_type) ? $letter_type : 1); ?>"
+>
+</lettereditor-component>
+<script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"
+></script>
+<script src="https://cdn.tiny.cloud/1/api-key/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/@tinymce/tinymce-jquery@2/dist/tinymce-jquery.min.js"></script>
+<script src="letterbodycomponent.js"></script>
+<script src="pagecomponent.js"></script>
+<script src="lettercomponent.js"></script>
+</body>
+</html>
